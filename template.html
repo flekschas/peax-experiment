@@ -1,95 +1,93 @@
 <script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
 <crowd-form answer-format="flatten-objects">
-  <short-instructions>Which distribution matches the target the best?</short-instructions>
-  <full-instructions>
-    <p>Select the group of patterns (red) that looks most similar the target (black) most.</p>
-    <p><em>The target pattern drawn (black) is the same in every column!</em></p>
-  </full-instructions>
   <style type="text/css">
     #images,
-    #radios {
+    #radios,
+    #examples {
       position: relative;
       width: 100%;
       display: flex;
-      align-items: flex-start;
     }
     #images > *,
-    #radios > * {
+    #radios > *,
+    #examples > * {
       flex-grow: 1;
       min-width: 120px;
-      max-width: 240px;
+      max-width: 188px;
     }
-    #images > * {
+    #images > *,
+    #examples > * {
       position: relative;
     }
     #radios > * {
       min-width: 96px;
-      max-width: 216px;
+      max-width: 164px;
       margin: 0;
-      padding: 12px;
+      padding: 8px 12px;
     }
-    #images > * > *,
-    #radios > * > * {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    #images img {
-      position: absolute;
-      top: 0;
-      left: 0;
+    #images img,
+    #examples img {
       margin: 0 auto;
-      min-width: 150px;
-      max-width: 230px;
+      width: 100%;
+      min-width: 120px;
+      max-width: 188px;
       height: auto;
+      max-height: 228px;
     }
-    #images .ratio {
-      padding-top: 90%;
+    .pattern-group {
+      margin-bottom: 1rem;
+    }
+    .separator {
+      width: 100%;
+      height: 3px;
+      margin: 30px 0 40px 0;
+      background: black;
+    }
+    .header {
+      margin-bottom: 0.25rem;
     }
   </style>
+
+  <short-instructions>
+    <strong>Which group matches the target the best?</strong>
+  </short-instructions>
+  <full-instructions>
+    <p>For each of the nine patterns, select the <strong>group of patterns</strong> (blue) that looks most similar to the target pattern (black).</p>
+    <p><em>Note that the target (black) is the same in every column! It is repeatedly drawn to simplify comparison.</em></p>
+    <p>For example, for the two groups shown below, we perceive the left group as more similar on average to the target (black) than the right group but there is no object similarity criterion.</p>
+    <div id="examples">
+      <div><img src="${EA}" /></div>
+      <div><img src="${EB}" /></div>
+    </div>
+    <p>Finally, You have to select a group for all of the nine patterns before can submit this form.</p>
+  </full-instructions>
+  <div class="separator"></div>
   <div class="pattern-group">
-    <div>
+    <div class="header">
       <strong>Pattern 1</strong>
     </div>
     <div id="images">
-      <div id="image-0-a" class="image-a">
-        <div class="ratio"></div>
-        <img src="${T0A}" />
-      </div>
-      <div id="image-0-b" class="image-b">
-        <div class="ratio"></div>
-        <img src="${T0B}" />
-      </div>
-      <div id="image-0-c" class="image-c">
-        <div class="ratio"></div>
-        <img src="${T0C}" />
-      </div>
-      <div id="image-0-d" class="image-d">
-        <div class="ratio"></div>
-        <img src="${T0D}" />
-      </div>
-      <div id="image-0-e" class="image-e">
-        <div class="ratio"></div>
-        <img src="${T0E}" />
-      </div>
-      <div id="image-0-f" class="image-f">
-        <div class="ratio"></div>
-        <img src="${T0F}" />
-      </div>
+      <div id="image-0-a" class="image-a"><img src="${T0A}" /></div>
+      <div id="image-0-b" class="image-b"><img src="${T0B}" /></div>
+      <div id="image-0-c" class="image-c"><img src="${T0C}" /></div>
+      <div id="image-0-d" class="image-d"><img src="${T0D}" /></div>
+      <div id="image-0-e" class="image-e"><img src="${T0E}" /></div>
+      <div id="image-0-f" class="image-f"><img src="${T0F}" /></div>
+      <div id="image-0-g" class="image-g"><img src="${T0G}" /></div>
     </div>
-    <crowd-radio-group id="radios">
+    <crowd-radio-group id="radios" required>
       <crowd-radio-button id="radio-0-a" class="radio-a" name="T0A" value="A">A</crowd-radio-button>
       <crowd-radio-button id="radio-0-b" class="radio-b" name="T0B" value="B">B</crowd-radio-button>
       <crowd-radio-button id="radio-0-c" class="radio-c" name="T0C" value="C">C</crowd-radio-button>
       <crowd-radio-button id="radio-0-d" class="radio-d" name="T0D" value="D">D</crowd-radio-button>
       <crowd-radio-button id="radio-0-e" class="radio-e" name="T0E" value="E">E</crowd-radio-button>
       <crowd-radio-button id="radio-0-f" class="radio-f" name="T0F" value="F">F</crowd-radio-button>
+      <crowd-radio-button id="radio-0-g" class="radio-g" name="T0G" value="G">G</crowd-radio-button>
     </crowd-radio-group>
   </div>
+  <div class="separator"></div>
   <div class="pattern-group">
-    <div>
+    <div class="header">
       <strong>Pattern 2</strong>
     </div>
     <div id="images">
@@ -99,18 +97,21 @@
       <div id="image-1-d" class="image-d"><img src="${T1D}" /></div>
       <div id="image-1-e" class="image-e"><img src="${T1E}" /></div>
       <div id="image-1-f" class="image-f"><img src="${T1F}" /></div>
+      <div id="image-1-g" class="image-g"><img src="${T1G}" /></div>
     </div>
-    <crowd-radio-group id="radios">
+    <crowd-radio-group id="radios" required>
       <crowd-radio-button id="radio-1-a" class="radio-a" name="T1A" value="A">A</crowd-radio-button>
       <crowd-radio-button id="radio-1-b" class="radio-b" name="T1B" value="B">B</crowd-radio-button>
       <crowd-radio-button id="radio-1-c" class="radio-c" name="T1C" value="C">C</crowd-radio-button>
       <crowd-radio-button id="radio-1-d" class="radio-d" name="T1D" value="D">D</crowd-radio-button>
       <crowd-radio-button id="radio-1-e" class="radio-e" name="T1E" value="E">E</crowd-radio-button>
       <crowd-radio-button id="radio-1-f" class="radio-f" name="T1F" value="F">F</crowd-radio-button>
+      <crowd-radio-button id="radio-1-g" class="radio-g" name="T1G" value="G">G</crowd-radio-button>
     </crowd-radio-group>
   </div>
+  <div class="separator"></div>
   <div class="pattern-group">
-    <div>
+    <div class="header">
       <strong>Pattern 3</strong>
     </div>
     <div id="images">
@@ -120,18 +121,21 @@
       <div id="image-2-d" class="image-d"><img src="${T2D}" /></div>
       <div id="image-2-e" class="image-e"><img src="${T2E}" /></div>
       <div id="image-2-f" class="image-f"><img src="${T2F}" /></div>
+      <div id="image-2-g" class="image-g"><img src="${T2G}" /></div>
     </div>
-    <crowd-radio-group id="radios">
+    <crowd-radio-group id="radios" required>
       <crowd-radio-button id="radio-2-a" class="radio-a" name="T2A" value="A">A</crowd-radio-button>
       <crowd-radio-button id="radio-2-b" class="radio-b" name="T2B" value="B">B</crowd-radio-button>
       <crowd-radio-button id="radio-2-c" class="radio-c" name="T2C" value="C">C</crowd-radio-button>
       <crowd-radio-button id="radio-2-d" class="radio-d" name="T2D" value="D">D</crowd-radio-button>
       <crowd-radio-button id="radio-2-e" class="radio-e" name="T2E" value="E">E</crowd-radio-button>
       <crowd-radio-button id="radio-2-f" class="radio-f" name="T2F" value="F">F</crowd-radio-button>
+      <crowd-radio-button id="radio-2-g" class="radio-g" name="T2G" value="G">G</crowd-radio-button>
     </crowd-radio-group>
   </div>
+  <div class="separator"></div>
   <div class="pattern-group">
-    <div>
+    <div class="header">
       <strong>Pattern 4</strong>
     </div>
     <div id="images">
@@ -141,18 +145,21 @@
       <div id="image-3-d" class="image-d"><img src="${T3D}" /></div>
       <div id="image-3-e" class="image-e"><img src="${T3E}" /></div>
       <div id="image-3-f" class="image-f"><img src="${T3F}" /></div>
+      <div id="image-3-g" class="image-g"><img src="${T3G}" /></div>
     </div>
-    <crowd-radio-group id="radios">
+    <crowd-radio-group id="radios" required>
       <crowd-radio-button id="radio-3-a" class="radio-a" name="T3A" value="A">A</crowd-radio-button>
       <crowd-radio-button id="radio-3-b" class="radio-b" name="T3B" value="B">B</crowd-radio-button>
       <crowd-radio-button id="radio-3-c" class="radio-c" name="T3C" value="C">C</crowd-radio-button>
       <crowd-radio-button id="radio-3-d" class="radio-d" name="T3D" value="D">D</crowd-radio-button>
       <crowd-radio-button id="radio-3-e" class="radio-e" name="T3E" value="E">E</crowd-radio-button>
       <crowd-radio-button id="radio-3-f" class="radio-f" name="T3F" value="F">F</crowd-radio-button>
+      <crowd-radio-button id="radio-3-g" class="radio-g" name="T3G" value="G">G</crowd-radio-button>
     </crowd-radio-group>
   </div>
+  <div class="separator"></div>
   <div class="pattern-group">
-    <div>
+    <div class="header">
       <strong>Pattern 5</strong>
     </div>
     <div id="images">
@@ -162,18 +169,21 @@
       <div id="image-4-d" class="image-d"><img src="${T4D}" /></div>
       <div id="image-4-e" class="image-e"><img src="${T4E}" /></div>
       <div id="image-4-f" class="image-f"><img src="${T4F}" /></div>
+      <div id="image-4-g" class="image-g"><img src="${T4G}" /></div>
     </div>
-    <crowd-radio-group id="radios">
+    <crowd-radio-group id="radios" required>
       <crowd-radio-button id="radio-4-a" class="radio-a" name="T4A" value="A">A</crowd-radio-button>
       <crowd-radio-button id="radio-4-b" class="radio-b" name="T4B" value="B">B</crowd-radio-button>
       <crowd-radio-button id="radio-4-c" class="radio-c" name="T4C" value="C">C</crowd-radio-button>
       <crowd-radio-button id="radio-4-d" class="radio-d" name="T4D" value="D">D</crowd-radio-button>
       <crowd-radio-button id="radio-4-e" class="radio-e" name="T4E" value="E">E</crowd-radio-button>
       <crowd-radio-button id="radio-4-f" class="radio-f" name="T4F" value="F">F</crowd-radio-button>
+      <crowd-radio-button id="radio-4-g" class="radio-g" name="T4G" value="G">G</crowd-radio-button>
     </crowd-radio-group>
   </div>
+  <div class="separator"></div>
   <div class="pattern-group">
-    <div>
+    <div class="header">
       <strong>Pattern 6</strong>
     </div>
     <div id="images">
@@ -183,18 +193,21 @@
       <div id="image-5-d" class="image-d"><img src="${T5D}" /></div>
       <div id="image-5-e" class="image-e"><img src="${T5E}" /></div>
       <div id="image-5-f" class="image-f"><img src="${T5F}" /></div>
+      <div id="image-5-g" class="image-g"><img src="${T5G}" /></div>
     </div>
-    <crowd-radio-group id="radios">
+    <crowd-radio-group id="radios" required>
       <crowd-radio-button id="radio-5-a" class="radio-a" name="T5A" value="A">A</crowd-radio-button>
       <crowd-radio-button id="radio-5-b" class="radio-b" name="T5B" value="B">B</crowd-radio-button>
       <crowd-radio-button id="radio-5-c" class="radio-c" name="T5C" value="C">C</crowd-radio-button>
       <crowd-radio-button id="radio-5-d" class="radio-d" name="T5D" value="D">D</crowd-radio-button>
       <crowd-radio-button id="radio-5-e" class="radio-e" name="T5E" value="E">E</crowd-radio-button>
       <crowd-radio-button id="radio-5-f" class="radio-f" name="T5F" value="F">F</crowd-radio-button>
+      <crowd-radio-button id="radio-5-g" class="radio-g" name="T5G" value="G">G</crowd-radio-button>
     </crowd-radio-group>
   </div>
+  <div class="separator"></div>
   <div class="pattern-group">
-    <div>
+    <div class="header">
       <strong>Pattern 7</strong>
     </div>
     <div id="images">
@@ -204,18 +217,21 @@
       <div id="image-6-d" class="image-d"><img src="${T6D}" /></div>
       <div id="image-6-e" class="image-e"><img src="${T6E}" /></div>
       <div id="image-6-f" class="image-f"><img src="${T6F}" /></div>
+      <div id="image-6-g" class="image-g"><img src="${T6G}" /></div>
     </div>
-    <crowd-radio-group id="radios">
+    <crowd-radio-group id="radios" required>
       <crowd-radio-button id="radio-6-a" class="radio-a" name="T6A" value="A">A</crowd-radio-button>
       <crowd-radio-button id="radio-6-b" class="radio-b" name="T6B" value="B">B</crowd-radio-button>
       <crowd-radio-button id="radio-6-c" class="radio-c" name="T6C" value="C">C</crowd-radio-button>
       <crowd-radio-button id="radio-6-d" class="radio-d" name="T6D" value="D">D</crowd-radio-button>
       <crowd-radio-button id="radio-6-e" class="radio-e" name="T6E" value="E">E</crowd-radio-button>
       <crowd-radio-button id="radio-6-f" class="radio-f" name="T6F" value="F">F</crowd-radio-button>
+      <crowd-radio-button id="radio-6-g" class="radio-g" name="T6G" value="G">G</crowd-radio-button>
     </crowd-radio-group>
   </div>
+  <div class="separator"></div>
   <div class="pattern-group">
-    <div>
+    <div class="header">
       <strong>Pattern 8</strong>
     </div>
     <div id="images">
@@ -225,18 +241,21 @@
       <div id="image-7-d" class="image-d"><img src="${T7D}" /></div>
       <div id="image-7-e" class="image-e"><img src="${T7E}" /></div>
       <div id="image-7-f" class="image-f"><img src="${T7F}" /></div>
+      <div id="image-7-g" class="image-g"><img src="${T7G}" /></div>
     </div>
-    <crowd-radio-group id="radios">
+    <crowd-radio-group id="radios" required>
       <crowd-radio-button id="radio-7-a" class="radio-a" name="T7A" value="A">A</crowd-radio-button>
       <crowd-radio-button id="radio-7-b" class="radio-b" name="T7B" value="B">B</crowd-radio-button>
       <crowd-radio-button id="radio-7-c" class="radio-c" name="T7C" value="C">C</crowd-radio-button>
       <crowd-radio-button id="radio-7-d" class="radio-d" name="T7D" value="D">D</crowd-radio-button>
       <crowd-radio-button id="radio-7-e" class="radio-e" name="T7E" value="E">E</crowd-radio-button>
       <crowd-radio-button id="radio-7-f" class="radio-f" name="T7F" value="F">F</crowd-radio-button>
+      <crowd-radio-button id="radio-7-g" class="radio-g" name="T7G" value="G">G</crowd-radio-button>
     </crowd-radio-group>
   </div>
+  <div class="separator"></div>
   <div class="pattern-group">
-    <div>
+    <div class="header">
       <strong>Pattern 9</strong>
     </div>
     <div id="images">
@@ -246,14 +265,16 @@
       <div id="image-8-d" class="image-d"><img src="${T8D}" /></div>
       <div id="image-8-e" class="image-e"><img src="${T8E}" /></div>
       <div id="image-8-f" class="image-f"><img src="${T8F}" /></div>
+      <div id="image-8-g" class="image-g"><img src="${T8G}" /></div>
     </div>
-    <crowd-radio-group id="radios">
+    <crowd-radio-group id="radios" required>
       <crowd-radio-button id="radio-8-a" class="radio-a" name="T8A" value="A">A</crowd-radio-button>
       <crowd-radio-button id="radio-8-b" class="radio-b" name="T8B" value="B">B</crowd-radio-button>
       <crowd-radio-button id="radio-8-c" class="radio-c" name="T8C" value="C">C</crowd-radio-button>
       <crowd-radio-button id="radio-8-d" class="radio-d" name="T8D" value="D">D</crowd-radio-button>
       <crowd-radio-button id="radio-8-e" class="radio-e" name="T8E" value="E">E</crowd-radio-button>
       <crowd-radio-button id="radio-8-f" class="radio-f" name="T8F" value="F">F</crowd-radio-button>
+      <crowd-radio-button id="radio-8-g" class="radio-g" name="T8G" value="G">G</crowd-radio-button>
     </crowd-radio-group>
   </div>
 </crowd-form>
@@ -268,8 +289,8 @@ function shuffleArray(array) {
 }
 
 for (var i = 0; i < 9; i++) {
-  var ids = [0, 1, 2, 3, 4, 5];
-  var labels = ['A', 'B', 'C', 'D', 'E', 'F'];
+  var ids = [0, 1, 2, 3, 4, 5, 6];
+  var labels = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
   shuffleArray(ids);
 
   var imageA = document.getElementById('image-' + i + '-a');
@@ -278,7 +299,8 @@ for (var i = 0; i < 9; i++) {
   var imageD = document.getElementById('image-' + i + '-d');
   var imageE = document.getElementById('image-' + i + '-e');
   var imageF = document.getElementById('image-' + i + '-f');
-  var images = [imageA, imageB, imageC, imageD, imageE, imageF];
+  var imageG = document.getElementById('image-' + i + '-g');
+  var images = [imageA, imageB, imageC, imageD, imageE, imageF, imageG];
 
   var radioA = document.getElementById('radio-' + i + '-a');
   var radioB = document.getElementById('radio-' + i + '-b');
@@ -286,9 +308,10 @@ for (var i = 0; i < 9; i++) {
   var radioD = document.getElementById('radio-' + i + '-d');
   var radioE = document.getElementById('radio-' + i + '-e');
   var radioF = document.getElementById('radio-' + i + '-f');
-  var radios = [radioA, radioB, radioC, radioD, radioE, radioF];
+  var radioG = document.getElementById('radio-' + i + '-g');
+  var radios = [radioA, radioB, radioC, radioD, radioE, radioF, radioG];
 
-  for (var j = 0; j < 6; j++) {
+  for (var j = 0; j < 7; j++) {
     images[j].style.order = ids[j];
     radios[j].style.order = ids[j];
     radios[j].innerHTML = labels[ids[j]];
