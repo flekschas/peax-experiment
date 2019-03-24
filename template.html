@@ -435,15 +435,37 @@
       </crowd-radio-group>
     </div>
   </div>
+  <crowd-button id="submit" form-action="submit" variant="primary" disabled>Submit</crowd-button>
 </crowd-form>
 <script type="text/javascript">
+var comparisons = document.getElementById('comparisons');
+var radioBtns = comparisons.querySelectorAll('crowd-radio-button');
+var submit = document.getElementById('submit');
+
+function checkRadioBtns(array) {
+  var checked = 0;
+  radioBtns.forEach(function (ratioBtn) {
+    checked += ratioBtn.checked;
+  });
+
+  if (checked === 18) {
+    submit.removeAttribute('disabled');
+  }
+}
+
+radioBtns.forEach(function (ratioBtn) {
+  ratioBtn.addEventListener('change', function() {
+    setTimeout(checkRadioBtns, 0);
+  });
+});
+
 function shuffleArray(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
 }
 
 for (var i = 0; i < 9; i++) {
