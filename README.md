@@ -4,7 +4,7 @@ We compared the perceived similarity of patterns in sequential data at 3
 different sizes. The sequential data is a [DNase-seq](https://en.wikipedia.org/wiki/DNase-Seq) experiment from the
 [ENCODE project](https://www.encodeproject.org). We extracted 9 different patterns at increasing sizes of 3 kilobase pairs (kb), 12 kb, and 120 kb.
 
-![Results of both user studies](/user-study-1-2-combined-results.png?raw=true "Results of both user studies")
+![Results of both user studies](/user-study-1-2-results.png?raw=true "Results of both user studies")
 
 ## Experiment 1: groupwise comparison of 7 similarity search techniques
 
