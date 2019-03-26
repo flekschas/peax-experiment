@@ -1,0 +1,739 @@
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+<crowd-form answer-format="flatten-objects" id="comparisons">
+  <style type="text/css">
+    .comparisons,
+    .comparison,
+    .radios,
+    #examples {
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+    .images {
+      -ms-flex-positive: 1;
+       -webkit-box-flex: 1;
+              flex-grow: 1;
+      min-width: 120px;
+      max-width: 174px;
+    }
+    .images > *,
+    #examples > * {
+      position: relative;
+    }
+    .images img,
+    #examples img {
+      margin: 0 auto;
+      min-width: 120px;
+      width: 100%;
+      max-width: 174px;
+      height: auto;
+      height: 40px;
+    }
+    .pattern-group {
+      margin-bottom: 1rem;
+    }
+    .comparison {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-positive: 1;
+       -webkit-box-flex: 1;
+              flex-grow: 1;
+      margin-right: 16px;
+    }
+    .separator {
+      width: 100%;
+      height: 3px;
+      margin: 30px 0 40px 0;
+      background: black;
+    }
+    .header {
+      margin-bottom: 0.25rem;
+    }
+    .blue {
+      color: #0f5d92;
+    }
+    .labels,
+    .images,
+    .radios {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+         -ms-flex-direction: column;
+             flex-direction: column;
+    }
+    .labels {
+      text-align: right;
+      min-width: 80px;
+      max-width: 100px;
+      margin-right: 8px;
+    }
+    .labels > div {
+      height: 40px;
+      line-height: 40px
+    }
+    .radios {
+      width: 40px;
+      margin-top: 40px;
+    }
+  </style>
+
+  <short-instructions>
+    <strong>Which pattern looks most similar to the target?</strong>
+  </short-instructions>
+  <full-instructions>
+    <p>Every comparison consists of 5 pairs. For each pair, select the <strong>pattern</strong> (drawn in <span class="blue">blue</span>) that looks more similar to the target (drawn in black above the two blue patterns).</p>
+    <p>For example, in the pair below, pattern A looks more similar to the target than pattern B.</p>
+    <div id="examples">
+      <div class="comparison">
+        <div class="labels">
+          <div class="target">Target</div>
+          <div class="blue">A</div>
+          <div class="blue">B</div>
+        </div>
+        <div class="images">
+          <div class="image-container image-t"><img src="${ET}" /></div>
+          <div class="image-container image-a"><img src="${EA}" /></div>
+          <div class="image-container image-b"><img src="${EB}" /></div>
+        </div>
+      </div>
+    </div>
+    <p><strong>Important</strong>: You have to complete all comparisons before you can submit!</p>
+  </full-instructions>
+  <div class="separator"></div>
+  <div class="pattern-group">
+    <div class="header">
+      <strong>Comparison 1</strong>
+    </div>
+    <div id="comparisons-0" class="comparisons">
+      <div class="comparison">
+        <div class="images">
+          <div id="image-0" class="image-container image-t"><img src="${T0}" /></div>
+          <div id="image-00-a" class="image-container image-a"><img src="${T00A}" /></div>
+          <div id="image-00-b" class="image-container image-b"><img src="${T00B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-00-a" class="radio radio-a" name="T00A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-00-b" class="radio radio-b" name="T00B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-0" class="image-container image-t"><img src="${T0}" /></div>
+          <div id="image-01-a" class="image-container image-a"><img src="${T01A}" /></div>
+          <div id="image-01-b" class="image-container image-b"><img src="${T01B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-01-a" class="radio radio-a" name="T01A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-01-b" class="radio radio-b" name="T01B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-0" class="image-container image-t"><img src="${T0}" /></div>
+          <div id="image-02-a" class="image-container image-a"><img src="${T02A}" /></div>
+          <div id="image-02-b" class="image-container image-b"><img src="${T02B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-02-a" class="radio radio-a" name="T02A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-02-b" class="radio radio-b" name="T02B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-0" class="image-container image-t"><img src="${T0}" /></div>
+          <div id="image-03-a" class="image-container image-a"><img src="${T03A}" /></div>
+          <div id="image-03-b" class="image-container image-b"><img src="${T03B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-03-a" class="radio radio-a" name="T03A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-03-b" class="radio radio-b" name="T03B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-0" class="image-container image-t"><img src="${T0}" /></div>
+          <div id="image-04-a" class="image-container image-a"><img src="${T04A}" /></div>
+          <div id="image-04-b" class="image-container image-b"><img src="${T04B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-04-a" class="radio radio-a" name="T04A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-04-b" class="radio radio-b" name="T04B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+    </div>
+  </div>
+  <div class="separator"></div>
+  <div class="pattern-group">
+    <div class="header">
+      <strong>Comparison 2</strong>
+    </div>
+    <div id="comparisons-1" class="comparisons">
+      <div class="comparison">
+        <div class="images">
+          <div id="image-1" class="image-container image-t"><img src="${T1}" /></div>
+          <div id="image-10-a" class="image-container image-a"><img src="${T10A}" /></div>
+          <div id="image-10-b" class="image-container image-b"><img src="${T10B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-10-a" class="radio radio-a" name="T10A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-10-b" class="radio radio-b" name="T10B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-1" class="image-container image-t"><img src="${T1}" /></div>
+          <div id="image-11-a" class="image-container image-a"><img src="${T11A}" /></div>
+          <div id="image-11-b" class="image-container image-b"><img src="${T11B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-11-a" class="radio radio-a" name="T11A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-11-b" class="radio radio-b" name="T11B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-1" class="image-container image-t"><img src="${T1}" /></div>
+          <div id="image-12-a" class="image-container image-a"><img src="${T12A}" /></div>
+          <div id="image-12-b" class="image-container image-b"><img src="${T12B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-12-a" class="radio radio-a" name="T12A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-12-b" class="radio radio-b" name="T12B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-1" class="image-container image-t"><img src="${T1}" /></div>
+          <div id="image-13-a" class="image-container image-a"><img src="${T13A}" /></div>
+          <div id="image-13-b" class="image-container image-b"><img src="${T13B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-13-a" class="radio radio-a" name="T13A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-13-b" class="radio radio-b" name="T13B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-1" class="image-container image-t"><img src="${T1}" /></div>
+          <div id="image-14-a" class="image-container image-a"><img src="${T14A}" /></div>
+          <div id="image-14-b" class="image-container image-b"><img src="${T14B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-14-a" class="radio radio-a" name="T14A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-14-b" class="radio radio-b" name="T14B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+    </div>
+  </div>
+  <div class="separator"></div>
+  <div class="pattern-group">
+    <div class="header">
+      <strong>Comparison 3</strong>
+    </div>
+    <div id="comparisons-2" class="comparisons">
+      <div class="comparison">
+        <div class="images">
+          <div id="image-2" class="image-container image-t"><img src="${T2}" /></div>
+          <div id="image-20-a" class="image-container image-a"><img src="${T20A}" /></div>
+          <div id="image-20-b" class="image-container image-b"><img src="${T20B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-20-a" class="radio radio-a" name="T20A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-20-b" class="radio radio-b" name="T20B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-2" class="image-container image-t"><img src="${T2}" /></div>
+          <div id="image-21-a" class="image-container image-a"><img src="${T21A}" /></div>
+          <div id="image-21-b" class="image-container image-b"><img src="${T21B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-21-a" class="radio radio-a" name="T21A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-21-b" class="radio radio-b" name="T21B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-2" class="image-container image-t"><img src="${T2}" /></div>
+          <div id="image-22-a" class="image-container image-a"><img src="${T22A}" /></div>
+          <div id="image-22-b" class="image-container image-b"><img src="${T22B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-22-a" class="radio radio-a" name="T22A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-22-b" class="radio radio-b" name="T22B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-2" class="image-container image-t"><img src="${T2}" /></div>
+          <div id="image-23-a" class="image-container image-a"><img src="${T23A}" /></div>
+          <div id="image-23-b" class="image-container image-b"><img src="${T23B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-23-a" class="radio radio-a" name="T23A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-23-b" class="radio radio-b" name="T23B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-2" class="image-container image-t"><img src="${T2}" /></div>
+          <div id="image-24-a" class="image-container image-a"><img src="${T24A}" /></div>
+          <div id="image-24-b" class="image-container image-b"><img src="${T24B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-24-a" class="radio radio-a" name="T24A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-24-b" class="radio radio-b" name="T24B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+    </div>
+  </div>
+  <div class="separator"></div>
+  <div class="pattern-group">
+    <div class="header">
+      <strong>Comparison 4</strong>
+    </div>
+    <div id="comparisons-3" class="comparisons">
+      <div class="comparison">
+        <div class="images">
+          <div id="image-3" class="image-container image-t"><img src="${T3}" /></div>
+          <div id="image-30-a" class="image-container image-a"><img src="${T30A}" /></div>
+          <div id="image-30-b" class="image-container image-b"><img src="${T30B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-30-a" class="radio radio-a" name="T30A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-30-b" class="radio radio-b" name="T30B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-3" class="image-container image-t"><img src="${T3}" /></div>
+          <div id="image-31-a" class="image-container image-a"><img src="${T31A}" /></div>
+          <div id="image-31-b" class="image-container image-b"><img src="${T31B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-31-a" class="radio radio-a" name="T31A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-31-b" class="radio radio-b" name="T31B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-3" class="image-container image-t"><img src="${T3}" /></div>
+          <div id="image-32-a" class="image-container image-a"><img src="${T32A}" /></div>
+          <div id="image-32-b" class="image-container image-b"><img src="${T32B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-32-a" class="radio radio-a" name="T32A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-32-b" class="radio radio-b" name="T32B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-3" class="image-container image-t"><img src="${T3}" /></div>
+          <div id="image-33-a" class="image-container image-a"><img src="${T33A}" /></div>
+          <div id="image-33-b" class="image-container image-b"><img src="${T33B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-33-a" class="radio radio-a" name="T33A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-33-b" class="radio radio-b" name="T33B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-3" class="image-container image-t"><img src="${T3}" /></div>
+          <div id="image-34-a" class="image-container image-a"><img src="${T34A}" /></div>
+          <div id="image-34-b" class="image-container image-b"><img src="${T34B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-34-a" class="radio radio-a" name="T34A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-34-b" class="radio radio-b" name="T34B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+    </div>
+  </div>
+  <div class="separator"></div>
+  <div class="pattern-group">
+    <div class="header">
+      <strong>Comparison 5</strong>
+    </div>
+    <div id="comparisons-4" class="comparisons">
+      <div class="comparison">
+        <div class="images">
+          <div id="image-4" class="image-container image-t"><img src="${T4}" /></div>
+          <div id="image-40-a" class="image-container image-a"><img src="${T40A}" /></div>
+          <div id="image-40-b" class="image-container image-b"><img src="${T40B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-40-a" class="radio radio-a" name="T40A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-40-b" class="radio radio-b" name="T40B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-4" class="image-container image-t"><img src="${T4}" /></div>
+          <div id="image-41-a" class="image-container image-a"><img src="${T41A}" /></div>
+          <div id="image-41-b" class="image-container image-b"><img src="${T41B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-41-a" class="radio radio-a" name="T41A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-41-b" class="radio radio-b" name="T41B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-4" class="image-container image-t"><img src="${T4}" /></div>
+          <div id="image-42-a" class="image-container image-a"><img src="${T42A}" /></div>
+          <div id="image-42-b" class="image-container image-b"><img src="${T42B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-42-a" class="radio radio-a" name="T42A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-42-b" class="radio radio-b" name="T42B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-4" class="image-container image-t"><img src="${T4}" /></div>
+          <div id="image-43-a" class="image-container image-a"><img src="${T43A}" /></div>
+          <div id="image-43-b" class="image-container image-b"><img src="${T43B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-43-a" class="radio radio-a" name="T43A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-43-b" class="radio radio-b" name="T43B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-4" class="image-container image-t"><img src="${T4}" /></div>
+          <div id="image-44-a" class="image-container image-a"><img src="${T44A}" /></div>
+          <div id="image-44-b" class="image-container image-b"><img src="${T44B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-44-a" class="radio radio-a" name="T44A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-44-b" class="radio radio-b" name="T44B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+    </div>
+  </div>
+  <div class="separator"></div>
+  <div class="pattern-group">
+    <div class="header">
+      <strong>Comparison 6</strong>
+    </div>
+    <div id="comparisons-5" class="comparisons">
+      <div class="comparison">
+        <div class="images">
+          <div id="image-5" class="image-container image-t"><img src="${T5}" /></div>
+          <div id="image-50-a" class="image-container image-a"><img src="${T50A}" /></div>
+          <div id="image-50-b" class="image-container image-b"><img src="${T50B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-50-a" class="radio radio-a" name="T50A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-50-b" class="radio radio-b" name="T50B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-5" class="image-container image-t"><img src="${T5}" /></div>
+          <div id="image-51-a" class="image-container image-a"><img src="${T51A}" /></div>
+          <div id="image-51-b" class="image-container image-b"><img src="${T51B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-51-a" class="radio radio-a" name="T51A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-51-b" class="radio radio-b" name="T51B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-5" class="image-container image-t"><img src="${T5}" /></div>
+          <div id="image-52-a" class="image-container image-a"><img src="${T52A}" /></div>
+          <div id="image-52-b" class="image-container image-b"><img src="${T52B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-52-a" class="radio radio-a" name="T52A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-52-b" class="radio radio-b" name="T52B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-5" class="image-container image-t"><img src="${T5}" /></div>
+          <div id="image-53-a" class="image-container image-a"><img src="${T53A}" /></div>
+          <div id="image-53-b" class="image-container image-b"><img src="${T53B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-53-a" class="radio radio-a" name="T53A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-53-b" class="radio radio-b" name="T53B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-5" class="image-container image-t"><img src="${T5}" /></div>
+          <div id="image-54-a" class="image-container image-a"><img src="${T54A}" /></div>
+          <div id="image-54-b" class="image-container image-b"><img src="${T54B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-54-a" class="radio radio-a" name="T54A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-54-b" class="radio radio-b" name="T54B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+    </div>
+  </div>
+  <div class="separator"></div>
+  <div class="pattern-group">
+    <div class="header">
+      <strong>Comparison 7</strong>
+    </div>
+    <div id="comparisons-6" class="comparisons">
+      <div class="comparison">
+        <div class="images">
+          <div id="image-6" class="image-container image-t"><img src="${T6}" /></div>
+          <div id="image-60-a" class="image-container image-a"><img src="${T60A}" /></div>
+          <div id="image-60-b" class="image-container image-b"><img src="${T60B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-60-a" class="radio radio-a" name="T60A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-60-b" class="radio radio-b" name="T60B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-6" class="image-container image-t"><img src="${T6}" /></div>
+          <div id="image-61-a" class="image-container image-a"><img src="${T61A}" /></div>
+          <div id="image-61-b" class="image-container image-b"><img src="${T61B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-61-a" class="radio radio-a" name="T61A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-61-b" class="radio radio-b" name="T61B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-6" class="image-container image-t"><img src="${T6}" /></div>
+          <div id="image-62-a" class="image-container image-a"><img src="${T62A}" /></div>
+          <div id="image-62-b" class="image-container image-b"><img src="${T62B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-62-a" class="radio radio-a" name="T62A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-62-b" class="radio radio-b" name="T62B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-6" class="image-container image-t"><img src="${T6}" /></div>
+          <div id="image-63-a" class="image-container image-a"><img src="${T63A}" /></div>
+          <div id="image-63-b" class="image-container image-b"><img src="${T63B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-63-a" class="radio radio-a" name="T63A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-63-b" class="radio radio-b" name="T63B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-6" class="image-container image-t"><img src="${T6}" /></div>
+          <div id="image-64-a" class="image-container image-a"><img src="${T64A}" /></div>
+          <div id="image-64-b" class="image-container image-b"><img src="${T64B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-64-a" class="radio radio-a" name="T64A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-64-b" class="radio radio-b" name="T64B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+    </div>
+  </div>
+  <div class="separator"></div>
+  <div class="pattern-group">
+    <div class="header">
+      <strong>Comparison 8</strong>
+    </div>
+    <div id="comparisons-7" class="comparisons">
+      <div class="comparison">
+        <div class="images">
+          <div id="image-7" class="image-container image-t"><img src="${T7}" /></div>
+          <div id="image-70-a" class="image-container image-a"><img src="${T70A}" /></div>
+          <div id="image-70-b" class="image-container image-b"><img src="${T70B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-70-a" class="radio radio-a" name="T70A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-70-b" class="radio radio-b" name="T70B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-7" class="image-container image-t"><img src="${T7}" /></div>
+          <div id="image-71-a" class="image-container image-a"><img src="${T71A}" /></div>
+          <div id="image-71-b" class="image-container image-b"><img src="${T71B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-71-a" class="radio radio-a" name="T71A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-71-b" class="radio radio-b" name="T71B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-7" class="image-container image-t"><img src="${T7}" /></div>
+          <div id="image-72-a" class="image-container image-a"><img src="${T72A}" /></div>
+          <div id="image-72-b" class="image-container image-b"><img src="${T72B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-72-a" class="radio radio-a" name="T72A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-72-b" class="radio radio-b" name="T72B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-7" class="image-container image-t"><img src="${T7}" /></div>
+          <div id="image-73-a" class="image-container image-a"><img src="${T73A}" /></div>
+          <div id="image-73-b" class="image-container image-b"><img src="${T73B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-73-a" class="radio radio-a" name="T73A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-73-b" class="radio radio-b" name="T73B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-7" class="image-container image-t"><img src="${T7}" /></div>
+          <div id="image-74-a" class="image-container image-a"><img src="${T74A}" /></div>
+          <div id="image-74-b" class="image-container image-b"><img src="${T74B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-74-a" class="radio radio-a" name="T74A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-74-b" class="radio radio-b" name="T74B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+    </div>
+  </div>
+  <div class="separator"></div>
+  <div class="pattern-group">
+    <div class="header">
+      <strong>Comparison 9</strong>
+    </div>
+    <div id="comparisons-8" class="comparisons">
+      <div class="comparison">
+        <div class="images">
+          <div id="image-8" class="image-container image-t"><img src="${T8}" /></div>
+          <div id="image-80-a" class="image-container image-a"><img src="${T80A}" /></div>
+          <div id="image-80-b" class="image-container image-b"><img src="${T80B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-80-a" class="radio radio-a" name="T80A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-80-b" class="radio radio-b" name="T80B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-8" class="image-container image-t"><img src="${T8}" /></div>
+          <div id="image-81-a" class="image-container image-a"><img src="${T81A}" /></div>
+          <div id="image-81-b" class="image-container image-b"><img src="${T81B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-81-a" class="radio radio-a" name="T81A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-81-b" class="radio radio-b" name="T81B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-8" class="image-container image-t"><img src="${T8}" /></div>
+          <div id="image-82-a" class="image-container image-a"><img src="${T82A}" /></div>
+          <div id="image-82-b" class="image-container image-b"><img src="${T82B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-82-a" class="radio radio-a" name="T82A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-82-b" class="radio radio-b" name="T82B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-8" class="image-container image-t"><img src="${T8}" /></div>
+          <div id="image-83-a" class="image-container image-a"><img src="${T83A}" /></div>
+          <div id="image-83-b" class="image-container image-b"><img src="${T83B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-83-a" class="radio radio-a" name="T83A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-83-b" class="radio radio-b" name="T83B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+      <div class="comparison">
+        <div class="images">
+          <div id="image-8" class="image-container image-t"><img src="${T8}" /></div>
+          <div id="image-84-a" class="image-container image-a"><img src="${T84A}" /></div>
+          <div id="image-84-b" class="image-container image-b"><img src="${T84B}" /></div>
+        </div>
+        <crowd-radio-group class="radios" required>
+          <crowd-radio-button id="radio-84-a" class="radio radio-a" name="T84A" value="A"></crowd-radio-button>
+          <crowd-radio-button id="radio-84-b" class="radio radio-b" name="T84B" value="B"></crowd-radio-button>
+        </crowd-radio-group>
+      </div>
+    </div>
+  </div>
+  <div class="separator"></div>
+  <crowd-button id="submit" form-action="submit" variant="primary" disabled>Submit</crowd-button>
+</crowd-form>
+<script type="text/javascript">
+var comparisons = document.getElementById('comparisons');
+var radioBtns = comparisons.querySelectorAll('crowd-radio-button');
+var submit = document.getElementById('submit');
+
+function checkRadioBtns(array) {
+  var checked = 0;
+  radioBtns.forEach(function (ratioBtn) {
+    checked += ratioBtn.checked;
+  });
+
+  if (checked >= 45) {
+    submit.removeAttribute('disabled');
+  }
+}
+
+radioBtns.forEach(function (ratioBtn) {
+  ratioBtn.addEventListener('change', function() {
+    setTimeout(checkRadioBtns, 0);
+  });
+});
+
+function shuffleArray(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+}
+
+for (var i = 0; i < 9; i++) {
+  var ids = [0, 1, 2, 3, 4];
+  shuffleArray(ids);
+
+  var comparisons = document
+    .getElementById('comparisons-' + i).querySelectorAll('.comparison');
+
+  var images = Array.prototype.map.call(comparisons, function(comparison) {
+    return comparison.querySelectorAll('.image-container');
+  });
+
+  var radios = Array.prototype.map.call(comparisons, function(comparison) {
+    return comparison.querySelectorAll('.radio');
+  });
+
+  for (var j = 0; j < 5; j++) {
+    comparisons[j].style.order = ids[j];
+    if (ids[j] === 4) {
+      comparisons[j].style.marginRight = 0;
+    }
+
+    var img_ids = [0, 1];
+    shuffleArray(img_ids);
+
+    images[j][0].style.order = 0;
+    images[j][1].style.order = img_ids[0] + 1;
+    images[j][2].style.order = img_ids[1] + 1;
+
+    radios[j][0].style.order = img_ids[0];
+    radios[j][1].style.order = img_ids[1];
+  }
+}
+</script>
